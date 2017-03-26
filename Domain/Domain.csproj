@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2703442-6676-4D69-854C-F43FF21E7F01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomExceptions\GameAlreadyAddedException.cs" />
+    <Compile Include="CustomExceptions\GameContainsSameTeamTwiceException.cs" />
+    <Compile Include="CustomExceptions\SeriesMissingException.cs" />
+    <Compile Include="Entities\Game.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Enums\MatchOutcome.cs" />
+    <Compile Include="Helper Classes\EntityValidation.cs" />
+    <Compile Include="Helper Classes\Schedule.cs" />
+    <Compile Include="Helper Classes\StringUtilities.cs" />
+    <Compile Include="Interfaces\IExposablePlayer.cs" />
+    <Compile Include="Interfaces\IExposableTeam.cs" />
+    <Compile Include="Repositories\MatchRepository.cs" />
+    <Compile Include="Repositories\PlayerRepository.cs" />
+    <Compile Include="Repositories\SeriesRepository.cs" />
+    <Compile Include="Services\DomainService.cs" />
+    <Compile Include="Services\MatchService.cs" />
+    <Compile Include="Services\PlayerService.cs" />
+    <Compile Include="Services\SeriesService.cs" />
+    <Compile Include="Repositories\GameRepository.cs" />
+    <Compile Include="Services\GameService.cs" />
+    <Compile Include="Value Objects\Person and children\PlayerEvents.cs" />
+    <Compile Include="Value Objects\Person and children\AggregatedPlayerEvents.cs" />
+    <Compile Include="Value Objects\Series and match\NumberOfTeams.cs" />
+    <Compile Include="Value Objects\Person and children\AggregatedPlayerStats.cs" />
+    <Compile Include="Value Objects\Person and children\PlayerStats.cs" />
+    <Compile Include="Entities\Series.cs" />
+    <Compile Include="Enums\CardType.cs" />
+    <Compile Include="Interfaces\IGameEvent.cs" />
+    <Compile Include="Value Objects\Game\Assist.cs" />
+    <Compile Include="Value Objects\Game\Card.cs" />
+    <Compile Include="Value Objects\Game\GameProtocol.cs" />
+    <Compile Include="Value Objects\Game\GameResult.cs" />
+    <Compile Include="Value Objects\Game\Goal.cs" />
+    <Compile Include="CustomExceptions\ShirtNumberMissingTeamIdException.cs" />
+    <Compile Include="Value Objects\Series and match\SeriesName.cs" />
+    <Compile Include="Value Objects\Game\MatchMinute.cs" />
+    <Compile Include="Value Objects\Game\OverTime.cs" />
+    <Compile Include="Value Objects\Game\Penalty.cs" />
+    <Compile Include="Repositories\TeamRepository.cs" />
+    <Compile Include="Services\TeamService.cs" />
+    <Compile Include="Value Objects\Person and children\ShirtNumber.cs" />
+    <Compile Include="Enums\PlayerPosition.cs" />
+    <Compile Include="Enums\PlayerStatus.cs" />
+    <Compile Include="Helper Classes\ValueObjectValidation.cs" />
+    <Compile Include="Value Objects\Person and children\PersonContactInformation.cs" />
+    <Compile Include="Value Objects\Person and children\DateOfBirth.cs" />
+    <Compile Include="Value Objects\Global\EmailAddress.cs" />
+    <Compile Include="Value Objects\Person and children\Name.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Match.cs" />
+    <Compile Include="Entities\Team.cs" />
+    <Compile Include="Interfaces\IGameDuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Value Objects\Team\ArenaName.cs" />
+    <Compile Include="Value Objects\Series and match\MatchDateAndTime.cs" />
+    <Compile Include="Value Objects\Series and match\MatchDuration.cs" />
+    <Compile Include="Value Objects\Team\TeamEvents.cs" />
+    <Compile Include="Value Objects\Team\TeamMatchSchedule.cs" />
+    <Compile Include="Value Objects\Team\TeamName.cs" />
+    <Compile Include="Value Objects\Global\PhoneNumber.cs" />
+    <Compile Include="CustomExceptions\ShirtNumberAlreadyInUseException.cs" />
+    <Compile Include="Value Objects\Team\AggregatedTeamEvents.cs" />
+    <Compile Include="Value Objects\Team\AggregatedTeamStats.cs" />
+    <Compile Include="Value Objects\Team\TeamStats.cs" />
+    <Compile Include="Value Objects\Global\ValueObject.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
